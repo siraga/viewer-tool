@@ -75,7 +75,7 @@ JSC3D.Viewer = function(canvas, parameters) {
 			InitRotationZ: 0, 
 			ModelColor: '#caa618', 
 			BackgroundColor1: '#ffffff', 
-			BackgroundColor2: '#383840', 
+			BackgroundColor2: '#ffffff', 
 			BackgroundImageUrl: '', 
 			Background: 'on', 
 			RenderMode: 'flat', 
@@ -114,9 +114,9 @@ JSC3D.Viewer = function(canvas, parameters) {
 	this.rotMatrix = new JSC3D.Matrix3x4;
 	this.transformMatrix = new JSC3D.Matrix3x4;
 	this.sceneUrl = '';
-	this.modelColor = 0xcaa618;
+	this.modelColor = 0xffffff;
 	this.bkgColor1 = 0xffffff;
-	this.bkgColor2 = 0x383840;
+	this.bkgColor2 = 0xffffff;
 	this.bkgImageUrl = '';
 	this.bkgImage = null;
 	this.isBackgroundOn = true;
