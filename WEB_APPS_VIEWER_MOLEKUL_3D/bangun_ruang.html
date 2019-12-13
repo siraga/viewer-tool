@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<HTML>
+ <HEAD>
+  <TITLE> VIEWER KONTEN 3 DIMENSI-DEMO</TITLE>
+  <META NAME="Author" CONTENT="JSC3D">
+ </HEAD>
+
+ <BODY>
+	<div style="width:960px; margin:auto; position:absolute; font-size: 9pt; color: #777777;">
+		<canvas id="cv" style="border: 1px solid;" width="960" height="540" ></canvas>
+		<div id="tip" style="display:block; color:#ffffff; padding:5px; position:absolute; left:10px; top:10px; background-color:#000000; height:50px; width:400px; border-radius:4px; border:1px solid #777777; font-family:Calibri,sans-serif; opacity:0.5; pointer-events:none;"> 
+			Drag mouse untuk memutar obyek <br> Drag mouse dan tahan tombol Shift untuk zoom <br> Drag Mouse dan tahan tombol kontrol untuk geser kanan kiri
+		</div>
+		<p style="font-family:Arial,sans-serif;">Model 3 Dimensi dibuat untuk kebutuhan riset dan pengembangan konten, <b>tidak diperkenankan</b> menggunakan konten untuk kebutuhan komersial. © PT Penerbit Erlangga</p>
+	</div>
+	<script type="text/javascript" src="molekul/jsc3d.js"></script>
+	<script type="text/javascript" src="molekul/jsc3d.webgl.js"></script>
+	<script type="text/javascript" src="molekul/jsc3d.touch.js"></script>
+	<script type="text/javascript">
+	var canvas = document.getElementById('cv');
+	var viewer = new JSC3D.Viewer(canvas);
+	viewer.setParameter('SceneUrl', 'molekul/CH4.obj');
+	viewer.setParameter('InitRotationX', 0);
+	viewer.setParameter('InitRotationY', 0);
+	viewer.setParameter('InitRotationZ', 0);
+	viewer.setParameter('ModelColor', '#CAA618');
+	viewer.setParameter('BackgroundColor1', '#E5D7BA');
+	viewer.setParameter('BackgroundColor2', '#383840');
+	viewer.setParameter('RenderMode', 'textureflat');
+	viewer.setParameter('MipMapping', 'on');
+	viewer.setParameter('Renderer', 'webgl');
+	viewer.init();
+	viewer.update();
+  </script>
+ </BODY>
+</HTML>
