@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<style>
+html,
+body {
+  height: 100%;
+  margin: 0 auto;
+}
+canvas {
+  height: 150px;
+  width: 400px;
+  border: 1px solid black;
+}
+</style>
+
+<script type="text/javascript">
+var canvas = document.getElementById("canvas");
+canvas.height = 150;
+canvas.width = 400;
+
+var totalImages = 72;
+var videoFrames = [];
+for (var i = 1; i <= totalImages; i++) {
+  var videoFrame = new Image;
+
+  var videoFrameUrl = 'https://payload.cargocollective.com/1/6/197390/13863927/Hot-sauce-GIF' + i + 'gif';
+  
+  videoFrame.src = videoFrameUrl;
+  videoFrames.push(videoFrame);
+}
+
+$("#my-input").on("input", function(event) {
+  var currentImage = videoFrames[event.target.value - 1];
+  var context = canvas.getContext("2d");
+  context.drawImage(currentImage, 0, 0);
+});
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<canvas id="canvas"></canvas>
+<br>
+<input id="my-input" type="range" min="1" max="72" value="1" />
+
+</body>
+</html>
